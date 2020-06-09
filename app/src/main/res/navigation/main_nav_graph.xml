@@ -5,5 +5,18 @@
     app:startDestination="@id/mainFragment">
 
     <include app:graph="@navigation/sub_nav_graph" />
+    <!--IF REMOVED ACTION WILL FAIL-->
     <include app:graph="@navigation/sub_nav_graph_2" />
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_sub_nav_graph"
+            app:destination="@id/sub_nav_graph" />
+        <action
+            android:id="@+id/action_to_nav_graph_2"
+            app:destination="@id/sub_nav_graph_2" />
+    </fragment>
 </navigation>

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_nav_graph"
-    app:startDestination="@id/mainFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sub_nav_graph"
+    app:startDestination="@id/subFragment">
 
     <include app:graph="@navigation/sub_nav_graph_2" />
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.myapplication.MainFragment"
-        android:label="MainFragment" />
+        android:id="@+id/subFragment"
+        android:name="com.example.myapplication.SubFragment"
+        android:label="fragment_sub"
+        tools:layout="@layout/fragment_sub">
+        <action
+            android:id="@+id/action_to_nav_graph_2"
+            app:destination="@id/sub_nav_graph_2" />
+    </fragment>
+
 </navigation>
